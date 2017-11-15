@@ -1,0 +1,133 @@
+<html>
+    <head>
+        <script src="js/jquery.min.js"></script>
+		<script src="js/jQueryRotate.js"></script>
+		<meta charset="UTF-8">
+		<style>
+			@font-face {
+				font-family: Geneva;
+				src: url(font/Geneva.ttf);
+			}
+			
+			.testo1 {
+				color: black;
+				font-family: Geneva;
+				font-size: 18pt;
+				padding-left: 30px;
+			}
+			
+			#stanza {
+				width: 1300px;
+				height: 750;
+				border: 1px solid black;
+			}
+			
+			#paesaggio {
+			  width: 1300px;
+			  height: 750px;
+			  background-image: url("img/POST 611/bg1.jpg");
+			  background-size: cover;
+			}
+			
+			#quadrato {
+				background-color: #fff2e6;
+				width: 440px;
+				height: 290px;
+				top: 427px;
+				left: 850px;
+				position: absolute;
+				opacity: 0.8;
+			}
+			
+			#home {
+				background-image: url("img/home.png");
+				background-size: cover;
+				height: 58px;
+				left: 29px;
+				position: absolute;
+				top: 688px;
+				width: 116px;
+			}
+			
+			#viva {
+				background-image: url("img/POST 611/viva.png");
+				background-size: cover;
+				height: 118px;
+				left: 1089px;
+				position: absolute;
+				top: 544px;
+				width: 137px;
+			}
+			
+			#morta {
+				background-image: url("img/POST 611/morta.png");
+				background-size: cover;
+				height: 118px;
+				left: 903px;
+				position: absolute;
+				top: 544px;
+				width: 137px;
+			}
+			
+			.scaleuphome:hover {
+			  transform: scale(1.2);
+			  cursor: pointer;
+			}
+			
+			#testofelice {
+				display: none;
+				position: absolute;
+				top: 650px;
+				left: 1090px;
+				color: black;
+				font-size: 14pt;
+				font-family: Geneva;
+			}
+			
+			#testotriste {
+				display: none;
+				position: absolute;
+				top: 650px;
+				left: 875px;
+				font-size: 14pt;
+				font-family: Geneva;
+			}
+        </style>
+    </head>
+    <body>
+		<div id="stanza">
+			<div id="paesaggio">
+				<div id="quadrato">
+					<p class="testo1">Bella si ricorda del padre ed è straziata dal dolore per la sua morte.</p>
+				</div>
+				<a href="../index.html"><div id="home" class="scaleuphome">
+				</div>
+				<a href="alternativo.html"><div id="viva">
+				</div>
+				<p id="testofelice" class="testo1">Si riprende</p>
+				</a>
+				<a href="terribile.html"><div id="morta">
+				</div>
+				<p id="testotriste" class="testo1">Muore dal dolore</p>
+				</a>
+			</div>
+		</div>
+        <script>
+			$('#viva').mouseenter(function() {
+			  $('#testofelice').show();
+			});
+			
+			$('#viva').mouseleave(function() {
+			  $('#testofelice').hide();
+			});
+			
+			$('#morta').mouseenter(function() {
+			  $('#testotriste').show();
+			});
+			
+			$('#morta').mouseleave(function() {
+			  $('#testotriste').hide();
+			});
+        </script>
+    </body>
+</html>

@@ -1,0 +1,165 @@
+<html>
+    <head>
+        <script src="js/jquery.min.js"></script>
+		<meta charset="UTF-8">
+		<style>
+			@font-face {
+				font-family: Geneva;
+				src: url(font/Geneva.ttf);
+			}
+			
+			#stanza {
+				width: 1300px;
+				height: 750px;
+				border: 1px solid black;
+			}
+			
+			#paesaggio {
+			  width: 1300px;
+			  height: 750px;
+			  top: 100px;
+			  left: 300px;
+			  background-image: url("img/13/bg.jpg");
+			  background-size: cover;
+			}
+
+			#dxchiusa {
+				background-image: url("img/13/dxchiusa crop.png");
+				background-size: cover;
+				height: 262px;
+				width: 146px;
+				top: 274px;
+				left: 1035px;
+				position: absolute;
+			}
+			
+			#dxaperta {
+				background-image: url("img/13/dxno crop.png");
+				background-size: cover;
+				height: 262px;
+				width: 146px;
+				top: 274px;
+				left: 1035px;
+				position: absolute;
+			}
+			
+			#noclickdx {
+				background-image: url("img/13/dxchiusa crop.png");
+				background-size: cover;
+				height: 262px;
+				width: 146px;
+				top: 274px;
+				left: 1035px;
+				position: absolute;
+			}
+			
+			#sxchiusa {
+				background-image: url("img/13/sxchiusa crop.png");
+				background-size: cover;
+				height: 257px;
+				width: 139px;
+				top: 274px;
+				left: 563px;
+				position: absolute;
+			}
+			
+			#bella {
+				background-image: url("img/13/bella.png");
+				background-size: cover;
+				height: 260px;
+				width: 141px;
+				top: 274px;
+				left: 563px;
+				position: absolute;
+			}
+			
+			#noclicksx {
+				background-image: url("img/13/sxchiusa crop.png");
+				background-size: cover;
+				height: 257px;
+				width: 139px;
+				top: 274px;
+				left: 563px;
+				position: absolute;
+			}
+
+			#quadrato {
+				background-color: #fff2e6;				/*per la trasparenza usa l'ultimo valore*/
+				width: 430px;
+				height: 277px;
+				top: 30px;
+				left: 30px;
+				position: absolute;
+				opacity: 0.8;
+			}
+			
+			.testo1 {
+				color: black;
+				font-family: Geneva;
+				font-size: 18pt;
+				padding-left: 28px;
+				padding-right: 15px;
+			}
+			
+			#home {
+				background-image: url("img/home.png");
+				background-size: cover;
+				height: 58px;
+				left: 29px;
+				position: absolute;
+				top: 688px;
+				width: 116px;
+			}
+			
+			.scaleuphome:hover {
+			  transform: scale(1.2);
+			  cursor: pointer;
+			}
+			
+			.scaleupfinestre:hover {
+			  transform: scale(1.03);
+			  cursor: pointer;
+			}
+			
+			.nonvedo {
+				visibility: hidden;
+			}
+        </style>
+    </head>
+    <body>
+		<div id="stanza">
+			<div id="paesaggio">
+				<div id="bella">
+				</div>
+				<div id="sxchiusa" class="pointer scaleupfinestre">
+				</div>
+				<div id="noclicksx" class="nonvedo">
+				</div>
+				<div id="dxaperta">
+				</div>
+				<div id="dxchiusa" class="pointer scaleupfinestre">
+				</div>
+				<div id="noclickdx" class="nonvedo">
+				</div>
+				<div id="quadrato">
+				<p class="testo1">Continuando il cammino sotto la pioggia verso il villaggio, il padre <br> si ammala in modo grave. <br> Il giorno seguente, nonostante non avesse fatto in tempo a recuperare il dono richiesto dalla figlia, decide di tornare a casa sperando di trovarla alla finestra.</p>
+				</div>
+				<a href="../index.html"><div id="home" class="scaleuphome">
+				</div>
+			</div>
+		</div>
+        <script>
+			$('#sxchiusa').click(function(){
+				$(this).hide();
+				$('#noclickdx').removeClass("nonvedo");
+				setTimeout(function(){ window.location = "14.html"; }, 2000);
+			});
+			
+			$('#dxchiusa').click(function(){
+				$(this).hide();
+				$('#noclicksx').removeClass("nonvedo");
+				setTimeout(function(){ window.location = "07.html"; }, 2000);
+			});
+        </script>
+    </body>
+</html>

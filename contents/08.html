@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <script src="js/jquery.min.js"></script>
+		<script src="js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+		<script src="js/jQueryRotate.js"></script>
+		<meta charset="UTF-8">
+		<style>
+			@font-face {
+				font-family: Geneva;
+				src: url(font/Geneva.ttf);
+			}
+			
+			#stanza {
+				width: 1300px;
+				height: 750;
+				border: 1px solid black;
+			}
+			
+			#paesaggio {
+			  width: 1300px;
+			  height: 750px;
+			  background-image: url("img/08/bg.jpg");
+			  background-size: cover;
+			}
+			
+			#chiave {
+				background-image: url("img/08/chiave.png");
+				background-size: cover;
+				height: 93px;
+				left: 360px;
+				position: absolute;
+				top: 400px;
+				width: 110px;
+				cursor: pointer;
+			}
+			
+			#quadrato {
+				background-color: #fff2e6;
+				width: 440px;
+				height: 283px;
+				top: 443px;
+				left: 850px;
+				position: absolute;
+				opacity: 0.8;
+			}
+			
+			.testo1 {
+				color: black;
+				font-family: Geneva;
+				font-size: 18pt;
+				padding-left: 30px;
+			}
+
+			#home {
+				background-image: url("img/home.png");
+				background-size: cover;
+				height: 58px;
+				left: 29px;
+				position: absolute;
+				top: 688px;
+				width: 116px;
+			}
+			
+			#avanti {
+				background-image: url("img/avanti.png");
+				background-size: cover;
+				height: 58px;
+				left: 1179px;
+				position: absolute;
+				top: 688px;
+				width: 116px;
+			}
+			
+			.scaleuphome:hover {
+			  transform: scale(1.2);
+			  cursor: pointer;
+			}
+			
+			.nonvedo {
+				visibility: hidden;
+			}
+        </style>
+    </head>
+    <body>
+		<div id="stanza">
+			<div id="paesaggio">
+				<div id="chiave">
+				</div>
+				<div id="quadrato">
+					<p class="testo1">Bella, giunta nel giardino di un castello al calar del sole, chiede ospitalità per la notte. Purtroppo <br> non sa che il castello è governato <br> da un’orrenda creatura che la imprigiona. Il mostro però rimane colpito dall’animo sensibile e gentile della fanciulla e, per pietà, la libera.</p>
+				</div>
+				<a href="../index.html"><div id="home" class="scaleuphome">
+				</div>
+				<a href="10.html"><div id="avanti" class="scaleuphome nonvedo">
+				</div>
+			</div>
+		</div>
+        <script>
+			var numclick = 0;
+			
+			$('#chiave').click(function() {
+				$(this).rotate({duration: 1000, angle: 0, animateTo: 360});
+				numclick++;
+				
+				if (numclick == 3) {
+					$(this).hide();
+					$('#quadrato').hide();
+					$('#paesaggio').css('background-image', 'url("img/08/bg02.jpg")');
+					$('#avanti').removeClass('nonvedo');
+				}
+			});
+			
+        </script>
+    </body>
+</html>

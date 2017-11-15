@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <script src="js/jquery.min.js"></script>
+		<meta charset="UTF-8">
+		<style>
+			@font-face {
+				font-family: Geneva;
+				src: url(font/Geneva.ttf);
+			}
+			
+			#stanza {
+				width: 1300px;
+				height: 750px;
+				border: 1px solid black;
+			}
+			
+			#paesaggio {
+			  width: 1300px;
+			  height: 750px;
+			  background-image: url("img/03/bg.jpg");
+			  background-size: cover;
+			}
+
+			#castello {
+			  width: 228px;
+			  height: 120px;
+			  position: absolute;
+			  top: 230px;
+			  left: 950px;
+			  background-image: url("img/03/cartellocastello pioggia.png");
+			  background-size: cover;
+			}
+
+			#strada {
+			  width: 228px;
+			  height: 120px;
+			  position: absolute;
+			  top: 400px;
+			  left: 970px;
+			  background-image: url("img/03/cartellostrada pioggia.png");
+			  background-size: cover;
+			}
+			
+			.scaleup:hover {
+			  transform: scale(1.5);
+			}
+			
+			#quadrato {
+				background-color: #fff2e6;				/*per la trasparenza usa l'ultimo valore*/
+				width: 440px;
+				height: 110px;
+				top: 30px;
+				left: 30px;
+				position: absolute;
+				opacity: 0.8;
+			}
+			
+			.testo {
+				color: black;
+				font-family: Geneva;
+				font-size: 18pt;
+				padding-left: 28px;
+			}
+			
+			#home {
+				background-image: url("img/home.png");
+				background-size: cover;
+				height: 58px;
+				left: 29px;
+				position: absolute;
+				top: 688px;
+				width: 116px;
+			}
+			
+			.scaleuphome:hover {
+			  transform: scale(1.2);
+			  cursor: pointer;
+			}
+        </style>
+    </head>
+    <body>
+		<div id="stanza">
+			<div id="paesaggio">
+				<div id="palo">
+				</div>
+				<a href="04.html"><div id="castello" class="scaleup">
+				</div></a>
+				<a href="13.html"><div id="strada" class="scaleup">
+				</div></a>
+				<div id="padre">
+					<div id="quadrato">
+						<p class="testo">Durante il viaggio il mercante viene colpito da una forte pioggia.</p>
+					</div>
+				</div>
+				<a href="../index.html"><div id="home" class="scaleuphome">
+				</div>
+			</div>
+		</div>
+        <script>
+
+        </script>
+    </body>
+</html>

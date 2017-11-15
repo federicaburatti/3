@@ -1,0 +1,151 @@
+<html>
+    <head>
+        <script src="contents/js/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="contents/css/csshake.css">
+		<meta charset="UTF-8">
+		<style>
+			@font-face {
+				font-family: Geneva;
+				src: url(contents/font/Geneva.ttf);
+			}
+			
+			#stanza {
+				width: 1300px;
+				height: 750px;
+				border: 1px solid black;
+			}
+			
+			#paesaggio {
+				position: absolute;
+				width: 1300px;
+				height: 750px;
+				background-image: url("contents/img/index/bg.jpg");
+				background-size: cover;
+			}
+			
+			#titolo {
+				position: absolute;
+				width: 1300px;
+				height: 750px;
+				background-image: url("contents/img/index/copertina.png");
+				background-size: cover;
+			}
+			
+			#unavolta {
+				position: absolute;
+				width: 329px;
+				height: 48px;
+				left: 490px;
+				top: 15px;
+				background-image: url("contents/img/index/unavoltacrop.png");
+				background-size: cover;
+			}
+			
+			#quadrato {
+				background-color: #fff2e6;
+				width: 440px;
+				height: 170px;
+				top: 20px;
+				left: 20px;
+				position: absolute;
+				opacity: 0.8;
+			}
+			
+			.testo {
+				color: black;
+				font-family: Geneva;
+				font-size: 18pt;
+				padding-left: 25px;
+			}
+			
+			#autori {
+				background-image: url("contents/img/index/autori.png");
+				background-size: cover;
+				height: 41px;
+				left: 20px;
+				position: absolute;
+				top: 20px;
+				width: 116px;
+			}
+			
+			#crediti {
+				background-image: url("contents/img/index/crediti.png");
+				background-size: cover;
+				height: 41px;
+				left: 1164px;
+				position: absolute;
+				top: 20px;
+				width: 116px;
+			}
+			
+			#bella {
+			  position:absolute;
+			  width: 500px;
+			  height: 500px;
+			  top: 212px;
+			  left: 190px;
+			  background-position: 0px 0px;
+			  background-image: url("contents/img/index/tripletta.png");
+			  animation: play 3s steps(3) infinite;
+			  image-rendering: pixelated;
+			  background-repeat: no-repeat;
+			}
+			
+			@keyframes play {
+			  0% {background-position: 0px 0px}
+			  100% {background-position: -1500px 0px;}
+			}
+			
+			#principe {
+			  position:absolute;
+			  width: 309px;
+			  height: 478px;
+			  top: 212px;
+			  left: 670px;
+			  background-position: 0px 0px;
+			  background-image: url("contents/img/index/bestiacrop02.png");
+			  animation: playA 2s steps(2) infinite;
+			  image-rendering: pixelated;
+			  background-repeat: no-repeat;
+			}
+			
+			@keyframes playA {
+			  0% {background-position: 0px 0px}
+			  100% {background-position: -618px 0px;}
+			}
+			
+			.scaleuphome:hover {							/*non gli metto lo scale perchè alla bertolo potrebbe non piacere*/
+			  transform: scale(1.1);
+			  cursor: pointer;
+			}
+        </style>
+    </head>
+    <body>
+		<div id="stanza">
+			<div id="paesaggio">
+				<div id="titolo">
+				</div>
+				<a href="contents/01.html"><div id="unavolta" class="shake-slow shake-constant shake-constant--hover">
+				</div></a>
+				<div id="bella">
+				</div>
+				<div id="principe">
+				</div>
+				<a href="contents/autori.html"><div id="autori">
+				</div></a>
+				<a href="contents/crediti.html"><div id="crediti">
+				</div></a>
+			</div>
+		</div>
+        <script>
+			//sparisci = function() {
+			  $("#diamante").fadeOut()
+			}
+
+			$(function () {
+				setInterval(function () { $('#diamante').delay(400).fadeOut(10).delay(400).fadeIn(10);}, 500);
+				setInterval(function () { $('#rosa').fadeOut(10).delay(400).fadeIn(10).delay(400);}, 500);
+			});
+        </script>
+    </body>
+</html>

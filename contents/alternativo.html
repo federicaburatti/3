@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <script src="js/jquery.min.js"></script>
+		<meta charset="UTF-8">
+		<style>
+			@font-face {
+				font-family: Geneva;
+				src: url(font/Geneva.ttf);
+			}
+			
+			#stanza {
+				width: 1300px;
+				height: 750px;
+				border: 1px solid black;
+			}
+			
+			#paesaggio {
+				position: absolute;
+				width: 1300px;
+				height: 750px;
+				background-image: url("img/alternativo/bg.jpg");
+				background-size: cover;
+			}
+			
+			#home {
+				background-image: url("img/home.png");
+				background-size: cover;
+				height: 58px;
+				left: 29px;
+				position: absolute;
+				top: 688px;
+				width: 116px;
+			}
+			
+			#quadrato {
+				background-color: #fff2e6;
+				width: 440px;
+				height: 363px;
+				top: 363px;
+				left: 842px;
+				position: absolute;
+				opacity: 0.8;
+			}
+			
+			.testo1 {
+				color: black;
+				font-family: Geneva;
+				font-size: 18pt;
+				padding-left: 30px;
+				padding-right: 30px;
+			}
+			
+			.scaleuphome:hover {
+			  transform: scale(1.2);
+			  cursor: pointer;
+			}
+        </style>
+    </head>
+    <body>
+		<div id="stanza">
+			<div id="paesaggio">
+				<div id="quadrato">
+					<p class="testo1">Bella si riprende dalla morte <br> del padre, capisce di amare profondamente la Bestia e torna <br> al castello da lui per sposarlo. <br> Il mostro però le spiega che a causa di un maleficio colei che lo avrebbe sposato sarebbe diventata un mostro come lui: nonostante queste terribili condizioni Bella accetta di diventare sua moglie, trasformandosi in Bestia.</p>
+				</div>
+			</div>
+			<a href="../index.html"><div id="home" class="scaleuphome">
+			</div>
+		</div>
+        <script>
+			//sparisci = function() {
+			  $("#diamante").fadeOut()
+			}
+
+			$(function () {
+				setInterval(function () { $('#diamante').delay(400).fadeOut(10).delay(400).fadeIn(10);}, 500);
+				setInterval(function () { $('#rosa').fadeOut(10).delay(400).fadeIn(10).delay(400);}, 500);
+			});
+        </script>
+    </body>
+</html>

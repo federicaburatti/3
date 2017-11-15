@@ -1,0 +1,277 @@
+<html>
+    <head>
+        <script src="js/jquery.min.js"></script>
+		<script src="js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+		<meta charset="UTF-8">
+		<style>
+			@font-face {
+				font-family: Geneva;
+				src: url(font/Geneva.ttf);
+			}
+			
+			#stanza {
+				width: 1300px;
+				height: 750px;
+				border: 1px solid black;
+			}
+			
+			#paesaggio {
+			  width: 1300px;
+			  height: 750px;
+			  background-image: url("img/04/bg rose.jpg");
+			  background-size: cover;
+			}
+			
+			#murorotto {
+				width: 1300px;
+				height: 750px;
+				background-image: url("img/04/muro rotto.png");
+				background-size: cover;
+				position: absolute;
+			}
+			
+			#rompere {
+				background-image: url("img/04/rompere.png");
+				background-size: cover;
+				height: 236px;
+				position: absolute;
+				width: 269px;
+				top: 450px;
+				left: 405px;
+			}
+			
+			#padre {
+				background-image: url("img/04/padre.png");
+				background-size: cover;
+				width: 1300px;
+				height: 750px;
+				position: absolute;
+			}
+			
+			#vince {
+				background-image: url("img/04/vincecrop.png");
+				background-size: cover;
+				width: 150px;
+				height: 158px;
+				top: 500px;
+				left: 438px;
+				position: absolute;
+			}
+			
+			#rosa {
+				background-image: url("img/04/rosa.png");
+				background-size: cover;
+				width: 81px;
+				height: 83px;
+				top: 537px;
+				left: 536px;
+				position: absolute;
+			}
+			
+			#albero {
+				background-image: url("img/04/alberocrop.png");
+				background-size: cover;
+				width: 444px;
+				height: 750px;
+				position: absolute;
+				left: 865px;
+			}
+
+			#progressBar {
+			  width: 15%;
+			  position: absolute;
+			  height: 28px;
+			  background-color: #0A5F44;
+			  top: 40px;
+			  left: 1004px;
+			}
+
+			#progressBar div {
+			  height: 100%;
+			  text-align: right;
+			  line-height: 22px; 						/* same as #progressBar height if we want text middle aligned */
+			  width: 100%;
+			  background-color: #f5141a;
+			  box-sizing: border-box;
+			}
+			
+			#rompere:hover {
+				cursor: pointer;
+			}
+			
+			#quadrato {
+				background-color: #fff2e6;				/*per la trasparenza usa l'ultimo valore*/
+				width: 440px;
+				height: 225px;
+				top: 30px;
+				left: 30px;
+				position: absolute;
+				opacity: 0.8;
+			}
+			
+			.testo1 {
+				color: black;
+				font-family: Geneva;
+				font-size: 18pt;
+				padding-left: 20px;
+				padding-right: 15px;
+			}
+			
+			.testo2 {
+				color: black;
+				font-family: Geneva;
+				font-size: 18pt;
+				padding-left: 30px;
+				padding-right: 15px;
+			}
+			
+			.testo3 {
+				color: black;
+				font-family: Geneva;
+				font-size: 18pt;
+				padding-left: 20px;
+				padding-right: 15px;
+			}
+			
+			#quadratovince {
+				background-color: #fff2e6;
+				width: 440px;
+				height: 110px;
+				top: 30px;
+				left: 30px;
+				position: absolute;
+				opacity: 0.8;
+			}
+			
+			#quadratoperde {
+				background-color: #fff2e6;
+				width: 440px;
+				height: 170px;
+				top: 30px;
+				left: 30px;
+				position: absolute;
+				opacity: 0.8;
+			}
+			
+			.nonvedo {
+				visibility: hidden;
+			}
+			
+			.avanti {
+				background-image: url("img/avanti.png");
+				background-size: cover;
+				height: 58px;
+				left: 1180px;
+				position: absolute;
+				top: 690px;
+				width: 116px;
+			}
+			
+			#home {
+				background-image: url("img/home.png");
+				background-size: cover;
+				height: 58px;
+				left: 29px;
+				position: absolute;
+				top: 688px;
+				width: 116px;
+			}
+			
+			.scaleuphome:hover {
+			  transform: scale(1.2);
+			  cursor: pointer;
+			}
+			
+			.nonvedo {
+				visibility: hidden;
+			}
+
+        </style>
+    </head>
+    <body>
+		<div id="stanza">
+			<div id="paesaggio">
+				<div id="vince">
+				</div>
+				<div id="rosa">
+				</div>
+				<div id="murorotto">
+				</div>
+				<div id="padre">
+				</div>
+				<div id="albero">
+				</div>
+				<div id="progressBar"><div></div></div>
+				<div id="quadrato">
+					<p class="testo1">Il mercante giunge quindi al castello. <br> Il giorno seguente esplora il giardino: oltre il muretto nota un rigoglioso roseto che attrae la sua attenzione. Cerca quindi di rompere il muro per cogliere una rosa per Bella.</p>
+				</div>
+				<div id="quadratovince" class="nonvedo">
+					<p class="testo2">Il padre è riuscito ad oltrepassare il muretto e coglie la rosa per Bella!</p>
+				</div>
+				<div id="quadratoperde" class="nonvedo">
+					<p class="testo3">Purtroppo il padre di Bella non riesce a cogliere una rosa per la figlia: decide quindi di riposarsi sotto una pianta che non sa esser velenosa!</p>
+				</div>
+				<div id="rompere">
+				</div>
+				<a href="../index.html"><div id="home" class="scaleuphome">
+				</div></a>
+				<a href="13.html"><div id="avantiperde" class="avanti scaleuphome nonvedo">
+				</div></a>
+				<a href="05.html"><div id="avantivince" class="avanti scaleuphome nonvedo">
+				</div></a>
+			</div>
+		</div>
+        <script>
+			var numclick = 0;
+			var firstClick = true;
+			var stopTimer = false;
+			
+			function progress(timeleft, timetotal, $element) {
+				var progressBarWidth = timeleft * $element.width() / timetotal;
+				$element.find('div').animate({ width: progressBarWidth }, timeleft == timetotal ? 0 : 1000, 'linear');//.html(timeleft);
+				
+				if(timeleft >= 0 && stopTimer == false) {
+					setTimeout(function() {
+						progress(timeleft - 1, timetotal, $element);
+					}, 1000);
+				} else if (timeleft < 0 && stopTimer == false) {
+					$("#rompere").unbind("click");
+					
+					setTimeout(function() {
+						$('#progressBar').hide();
+						$('#padre').hide();
+						$('#quadrato').addClass("nonvedo");
+						$('#quadratoperde').removeClass("nonvedo");
+						$('#avantiperde').removeClass("nonvedo");
+						$('#albero').css('background-image', 'url("img/04/dormecrop.png")');		//fallisce nel rompere il muro e quindi si addormenta sotto la pianta poi passa al nodo tredici
+					}, 2000);
+				}
+			};
+			
+			$('#rompere').click(function() {
+				numclick++;
+				
+				if (numclick < 30) {
+					if (firstClick == true) {
+						progress(9, 10, $('#progressBar')); // timetotal deve essere pari a timeleft + 1, in questo modo la barra inizia a scorrere subito
+						firstClick = false;
+					}
+					
+					$(this).effect( "shake", {
+						direction: "left",
+						distance: 5,
+						times: 2
+					}, 80 ); //a 100 si noterebbe il glitch di rompere
+				} else if (numclick == 30) {
+					stopTimer = true;
+					$(this).hide();
+					$('#progressBar').hide();
+					$('#padre').hide();
+					$('#quadrato').addClass("nonvedo");
+					$('#quadratovince').removeClass("nonvedo");
+					$('#avantivince').removeClass("nonvedo"); //NODO LA BESTIA SORPRENDE IL PADRE
+				}
+			});
+        </script>
+    </body>
+</html>

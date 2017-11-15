@@ -1,0 +1,373 @@
+<html>
+    <head>
+        <script src="js/jquery.min.js"></script>
+		<script src="js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+		<meta charset="UTF-8">
+		<style>
+			@font-face {
+				font-family: Geneva;
+				src: url(font/Geneva.ttf);
+			}
+			
+			#stanza {
+				width: 1300px;
+				height: 750px;
+				border: 1px solid black;
+			}
+			
+			#testo {
+				position:absolute;
+				width: 550px;
+				top: 60px;
+				
+			}
+			
+			#paesaggio {
+			  position: absolute;
+			  width: 1300px;
+			  height: 750px;
+			  background-image: url("img/02/bg.jpg");
+			  background-size: cover;
+			}
+			
+			#padre {
+				position: absolute;
+				width: 1300px;
+				height: 750px;
+				background-image: url("img/02/padre.png");
+				background-size: cover;
+			}
+			
+			#padregemma {
+				position: absolute;
+				width: 1300px;
+				height: 750px;
+				background-image: url("img/02/padregemma.png");
+				background-size: cover;
+			}
+			
+			#bestia {
+				position: absolute;
+				width: 1300px;
+				height: 750px;
+				left: -50px;
+				background-image: url("img/02/bestia.png");
+				background-size: cover;
+			}
+
+			#padrefail {
+				position: absolute;
+				width: 1300px;
+				height: 750px;
+				background-image: url("img/02/padrefail.png");
+				background-size: cover;
+			}
+			
+			#ombra {
+				position: absolute;
+				width: 1300px;
+				height: 750px;
+				background-image: url("img/02/ombra.png");
+				background-size: cover;
+			}
+			
+			#ombragemma {
+				position: absolute;
+				width: 1300px;
+				height: 750px;
+				background-image: url("img/02/ombragemma.png");
+				background-size: cover;
+			}
+
+			#ombrafail {
+				position: absolute;
+				width: 1300px;
+				height: 750px;
+				background-image: url("img/02/ombrafail.png");
+				background-size: cover;
+			}
+
+			#giusta {
+				background-image: url("img/02/giusta.png");
+				background-size: cover;
+				height: 186px;
+				left: 900px;
+				position: absolute;
+				top: 510px;
+				width: 59px;
+			}
+			
+			#rotta {
+				background-image: url("img/02/rotta.png");
+				background-size: cover;
+				height: 168px;
+				left: 1180px;
+				position: absolute;
+				top: 530px;
+				width: 43px;
+			}
+			
+			#piegata {
+				background-image: url("img/02/piegata.png");
+				background-size: cover;
+				height: 168px;
+				left: 1020px;
+				position: absolute;
+				top: 530px;
+				width: 97px;
+			}
+			.draggabile:hover {
+				cursor:pointer;
+			}
+			
+			.scala:onclick {
+				transition: scale (1.5) 1s;
+			}
+			
+			.salto {
+			  animation: oscillate 1s infinite cubic-bezier(0.77,0.33,0.26,0.72);
+			}
+			
+			.salto2 {
+			  animation: oscillate2 1s infinite cubic-bezier(0.77,0.33,0.26,0.72);
+			}
+			
+			@keyframes oscillate {
+				0%		{transform: translateY(0px);}
+				50%		{transform: translateY(-50px);}
+				75%		{transform: translateY(0px);}
+				100%	{transform: translateY(0px);}
+			}
+			
+			@keyframes oscillate2 {
+				0%		{transform: translateX(0px);}
+				50%		{transform: translateX(-50px);}
+				75%		{transform: translateX(0px);}
+				100%	{transform: translateX(0px);}
+			}
+			
+			.scaleup {
+			  transform: scale(1.5,2.5);
+			}
+			
+			#quadrato {
+				background-color: #fff2e6;
+				width: 440px;
+				height: 400px;
+				top: 320px;
+				left: 840px;
+				position: absolute;
+				opacity: 0.8;
+			}
+			
+			#quadratovince {
+				background-color: #fff2e6;
+				width: 440px;
+				height: 433px;
+				top: 288px;
+				left: 840px;
+				position: absolute;
+				opacity: 0.8;
+			}
+
+			#quadratoperde {
+				background-color: #fff2e6;
+				width: 440px;
+				height: 140px;
+				top: 568px;
+				left: 840px;
+				position: absolute;
+				opacity: 0.8;
+			}
+			
+			.testo1 {
+				color: black;
+				font-family: Geneva;
+				font-size: 18pt;
+				padding-left: 40px;
+				padding-right: 15px;
+			}
+			
+			.testo2 {
+				color: black;
+				font-family: Geneva;
+				font-size: 18pt;
+				padding-left: 30px;
+				padding-right: 15px;
+			}
+			
+			.testo3 {
+				color: black;
+				font-family: Geneva;
+				font-size: 18pt;
+				padding-left: 30px;
+			}
+			
+			.nonvedo {
+				visibility: hidden;
+			}
+			
+			#avanti {
+				background-image: url("img/avanti.png");
+				background-size: cover;
+				height: 58px;
+				left: 1171px;
+				position: absolute;
+				top: 679px;
+				width: 116px;
+			}
+			
+			#felice {
+			  position:absolute;
+			  width:379px;
+			  height:320px;
+			  top: 486px;
+			  left: 960px;
+			  background-position: 0px 0px;
+			  background-image: url("img/02/spritesi.png");
+			  animation: play 0.6s steps(2) infinite;
+			  image-rendering: pixelated;
+			  background-repeat: no-repeat;
+			  cursor: pointer;
+			}
+			
+			@keyframes play {
+			  0% {background-position: 0px 0px}
+			  100% {background-position: -758px 0px;}
+			}
+
+			#triste {
+			  position:absolute;
+			  width:379px;
+			  height:320px;
+			  top: 486px;
+			  left: 780px;
+			  background-position: 0px 0px;
+			  background-image: url("img/02/spriteno.png");
+			  animation: play 0.6s steps(2) infinite;
+			  image-rendering: pixelated;
+			  background-repeat: no-repeat;
+			  cursor: pointer;
+			}
+			
+			.ingrandimentobella {
+			  transform: scale(0.3);
+			}
+			
+			#home {
+				background-image: url("img/home.png");
+				background-size: cover;
+				height: 58px;
+				left: 20px;
+				position: absolute;
+				top: 679px;
+				width: 116px;
+			}
+			
+			.scaleuphome:hover {
+			  transform: scale(1.2);
+			  cursor: pointer;
+			}
+			
+        </style>
+    </head>
+    <body>
+		<div id="stanza">
+			<div id="paesaggio">
+				<div id="ombra" class="salto2">
+				</div>
+				<div id="ombragemma" class="nonvedo">
+				</div>
+				<div id="ombrafail" class="nonvedo">
+				</div>
+				<div id="padre" class="salto">
+				</div>
+				<div id="padregemma" class="nonvedo">
+				</div>
+				<div id="bestia" class="nonvedo">
+				</div>
+				<div id="padrefail" class="nonvedo">
+				</div>
+				<div id="quadrato">
+					<p class="testo1">Durante il viaggio il mercante si imbatte in un giardino: un albero <br> in particolare ha frutti che sono gemme preziose.</p>
+				</div>
+				<div id="quadratovince" class="nonvedo">
+					<p class="testo2">Il padre raggiunge le gemme <br> e mentre ne coglie una un’enorme mostro lo assale, gridando che lo avrebbe ucciso! Il mercante cerca quindi di spiegare le sue ragioni: la Bestia decide di risparmiagli la vita, ma in cambio la fanciulla a cui era dedicata la gemma avrebbe dovuto abitare al castello con lui.</p>
+				</div>
+				<div id="quadratoperde" class="nonvedo">
+					<p class="testo3">Il padre non trova la scala giusta <br> per salire sull'albero, decide quindi <br> di continuare il suo viaggio.</p>
+				</div>
+				<div id="giusta" class="draggabile scala">
+				</div>
+				<div id="rotta" class="draggabile scala">
+				</div>
+				<div id="piegata" class="draggabile scala">
+				</div>
+				<a href="03.html"><div id="avanti" class="scaleuphome nonvedo">
+				</div>
+				<a href="../index.html"><div id="home" class="scaleuphome">
+				</div>
+		<a href="10.html">
+			<div id="felice" class="nonvedo ingrandimentobella">
+			</div>
+		</a>
+		<a href="06.html">
+			<div id="triste" class="nonvedo ingrandimentobella">
+			</div>
+		</a>
+			</div>
+		</div>
+        <script>		
+		$(".draggabile").draggable({
+			start: function( event, ui ) {
+				$(this).addClass("scaleup");												//vedi css per il .scaleup
+			},
+			revert: function (x, y) {
+				if ($(this).position().left > 400 && $(this).position().left < 580 && $(this).position().top > 30 && $(this).position().top < 550) {
+					if ($(this).attr('id') == "giusta") {
+						$('#padre').hide();
+						$('#ombra').hide();
+						$('#padregemma').removeClass("nonvedo");
+						$('#ombragemma').removeClass("nonvedo");
+						$('#bestia').removeClass("nonvedo");
+						$('#quadrato').addClass("nonvedo");
+						$('#rotta').addClass("nonvedo");
+						$('#piegata').addClass("nonvedo");
+						$('#quadratovince').removeClass("nonvedo");
+						$('#felice').removeClass("nonvedo");
+						$('#triste').removeClass("nonvedo");
+						//setTimeout(function(){ window.location = "05.html"; }, 20000);       //vince prova scale e va a nodo cinque
+					} else if ($(this).attr('id') == "rotta") {
+						$('#padre').hide();
+						$('#ombra').hide();
+						$('#padrefail').removeClass("nonvedo");
+						$('#ombrafail').removeClass("nonvedo");
+						$('#avanti').removeClass("nonvedo");
+						$('#quadrato').addClass("nonvedo");
+						$('#piegata').addClass("nonvedo");
+						$('#giusta').addClass("nonvedo");
+						$('#quadratoperde').removeClass("nonvedo");
+						//setTimeout(function(){ window.location = "03.html"; }, 20000);       //fallisce prova scale e va a nodo tre
+					} else {
+						$('#padre').hide();
+						$('#ombra').hide();
+						$('#padrefail').removeClass("nonvedo");
+						$('#ombrafail').removeClass("nonvedo");
+						$('#avanti').removeClass("nonvedo");
+						$('#quadrato').addClass("nonvedo");
+						$('#rotta').addClass("nonvedo");
+						$('#giusta').addClass("nonvedo");
+						$('#quadratoperde').removeClass("nonvedo");
+						//setTimeout(function(){ window.location = "03.html"; }, 20000);       //fallisce prova scale e va a nodo tre
+					}
+					return false;
+				} else {
+					$(this).removeClass("scaleup");
+					return true;
+				}	
+			}
+		});
+		
+        </script>
+    </body>
+</html>

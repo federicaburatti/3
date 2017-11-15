@@ -1,0 +1,231 @@
+<html>
+    <head>
+        <script src="js/jquery.min.js"></script>
+		<script src="js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+		<meta charset="UTF-8">
+		<style>
+			@font-face {
+				font-family: Geneva;
+				src: url(font/Geneva.ttf);
+			}
+			
+			#stanza {
+				width: 1300px;
+				height: 750px;
+				border: 1px solid black;
+			}
+			
+			#paesaggio {
+			  width: 1300px;
+			  height: 750px;
+			  top: 100px;
+			  left: 300px;
+			  background-image: url("img/09/bg.jpg");
+			  background-size: cover;
+			}
+			
+			#mantello {
+				background-image: url("img/09/mantello.png");
+				background-size: cover;
+				height: 122px;
+				left: 359px;
+				position: absolute;
+				top: 198px;
+				width: 97px;
+			}
+
+			#profumocrop {
+				background-image: url("img/09/profumocrop.png");
+				background-size: cover;
+				height: 25px;
+				left: 617px;
+				position: absolute;
+				top: 286px;
+				width: 26px;
+			}
+			
+			#borsellino {
+				background-image: url("img/09/borsellino.png");
+				background-size: cover;
+				height: 37px;
+				left: 252px;
+				position: absolute;
+				top: 713px;
+				width: 41px;
+			}
+			
+			#scarpe {
+				background-image: url("img/09/scarpe.png");
+				background-size: cover;
+				height: 44px;
+				left: 676px;
+				position: absolute;
+				top: 642px;
+				width: 51px;
+			}
+	
+			#spazzolacrop {
+				background-image: url("img/09/spazzolacrop.png");
+				background-size: cover;
+				height: 25px;
+				left: 155px;
+				position: absolute;
+				top: 497px;
+				width: 62px;
+			}
+			
+			#valigia {
+				background-image: url("img/09/valigia.png");
+				background-size: cover;
+				height: 72px;
+				left: 502px;
+				position: absolute;
+				top: 639px;
+				width: 88px;
+			}
+			
+			.draggabile:hover {
+				cursor: pointer;
+			}
+			
+			#bar {
+				background-image: url("img/09/bar.png");
+				background-size: cover;
+				height: 80px;
+				left: 150px;
+				position: absolute;
+				top: 670px;
+				width: 650px;
+			}
+			
+			#progressBar {
+			  width: 15%;
+			  position: absolute;
+			  height: 28px;
+			  top: 40px;
+			  left: 30px;
+			  background-color: #0A5F44;
+			}
+			
+			#progressBar div {
+			  height: 100%;
+			  text-align: right;
+			  line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+			  width: 100%;
+			  background-color: #f5141a;
+			  box-sizing: border-box;
+			}
+
+			#quadrato {
+				background-color: #fff2e6;
+				width: 440px;
+				height: 507px;
+				top: 218px;
+				left: 848px;
+				position: absolute;
+				opacity: 0.8;
+			}
+			
+			.testo1 {
+				color: black;
+				font-family: Geneva;
+				font-size: 18pt;
+				padding-left: 25px;
+				padding-right: 15px;
+			}
+			
+			#home {
+				background-image: url("img/home.png");
+				background-size: cover;
+				height: 58px;
+				left: 29px;
+				position: absolute;
+				top: 688px;
+				width: 116px;
+			}
+			
+			.scaleuphome:hover {
+			  transform: scale(1.2);
+			  cursor: pointer;
+			}
+			
+			#area {
+				 position: absolute;
+				 width: 386px;
+				 height: 140px;
+				 top: 549px;
+				 left: 868px;
+				 border: 7px dotted #ffdfc1
+			}
+        </style>
+    </head>
+    <body>
+		<div id="stanza">
+			<div id="paesaggio">
+				<div id="progressBar"><div></div></div>
+				<div id="quadrato" class="nonvedo">
+					<p class="testo1">Bella continua a vivere nel castello con la Bestia, ma un giorno scopre che la salute del padre è peggiorata, perciò chiede al mostro di poter tornare a casa. Egli acconsente ma le chiede di non rimanere troppo a lungo lontana da lui o avrebbe sofferto la sua mancanza. <br> La fanciulla deve però riordinare le sue cose prima di partire!</p>
+				</div>
+				<div id="area">
+				</div>
+				<div id="mantello" class="draggabile">
+				</div>
+				<div id="profumocrop" class="draggabile">
+				</div>
+				<div id="borsellino" class="draggabile">
+				</div>
+				<div id="scarpe" class="draggabile">
+				</div>
+				<div id="spazzolacrop" class="draggabile">
+				</div>
+				<div id="valigia" class="draggabile">
+				</div>
+				<a href="../index.html"><div id="home" class="scaleuphome">
+				</div>
+			</div>
+		</div>
+        <script>
+		var dropped = 0;
+		var firstClick = true;
+		var stopTimer = false;
+		
+		function progress(timeleft, timetotal, $element) {
+			var progressBarWidth = timeleft * $element.width() / timetotal;
+			$element.find('div').animate({ width: progressBarWidth }, timeleft == timetotal ? 0 : 1000, 'linear');//.html(timeleft);
+			if(timeleft >= 0 && stopTimer == false) {
+				setTimeout(function() {
+					progress(timeleft - 1, timetotal, $element);
+				}, 1000);
+			} else if (timeleft < 0 && stopTimer == false) {
+				$(".draggabile").unbind("draggable");
+				window.location = "11b.html";
+			}
+		};
+					
+		$(".draggabile").mousedown(function() {
+			if (firstClick == true) {
+				progress(9, 10, $('#progressBar'));
+				firstClick = false;
+			}
+		});
+		
+		$(".draggabile").draggable({
+		  revert: function (x, y) {
+			//alert($(this).position().left + " " + $(this).position().top);
+			if ($(this).position().left > 874 && $(this).position().left < 1260 && $(this).position().top > 557 && $(this).position().top < 697) {
+				//alert("asd");
+				$(this).removeClass("draggabile");
+				$(this).draggable( "disable" );
+				dropped++;
+				if (dropped == 6) {
+					stopTimer = true;
+					window.location = "12.html";
+				}
+			}
+			
+			return false;}
+		});
+		
+        </script>
+    </body>
+</html>

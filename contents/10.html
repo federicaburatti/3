@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <script src="js/jquery.min.js"></script>
+		<meta charset="UTF-8">
+		<style>
+			@font-face {
+				font-family: Geneva;
+				src: url(font/Geneva.ttf);
+			}
+			
+			#stanza {
+				width: 1300px;
+				height: 750px;
+				border: 1px solid black;
+			}
+			
+			#paesaggio {
+			  width: 1300px;
+			  height: 750px;
+			  background-image: url("img/10/bg.jpg");
+			  background-size: cover;
+			}
+			
+			#quadrato {
+				background-color: #fff2e6;				/*per la trasparenza usa l'ultimo valore*/
+				width: 440px;
+				height: 390px;
+				top: 30px;
+				left: 30px;
+				position: absolute;
+				opacity: 0.8;
+			}
+			
+			.testo {
+				color: black;
+				font-family: Geneva;
+				font-size: 18pt;
+				padding-left: 25px;
+				padding-right: 15px;
+			}
+	
+			#felice {
+			  position:absolute;
+			  width:431.5px;
+			  height:358px;
+			  top: 158px;
+			  left: 120px;
+			  background-position: 0px 0px;
+			  background-image: url("img/10/reginasi.png");
+			  animation: play 0.6s steps(2) infinite;
+			  image-rendering: pixelated;
+			  background-repeat: no-repeat;
+			  cursor: pointer;
+			}
+			
+			@keyframes play {
+			  0% {background-position: 0px 0px}
+			  100% {background-position: -862px 0px;}
+			}
+
+			#triste {
+			  position:absolute;
+			  width:432px;
+			  height:358px;
+			  top: 158px;
+			  left: -60px;
+			  background-position: 0px 0px;
+			  background-image: url("img/10/reginano.png");
+			  animation: play 0.6s steps(2) infinite;
+			  image-rendering: pixelated;
+			  background-repeat: no-repeat;
+			  cursor: pointer;
+			}
+			
+			.ingrandimentobella {
+			  transform: scale(0.3);
+			}
+			
+			#home {
+				background-image: url("img/home.png");
+				background-size: cover;
+				height: 58px;
+				left: 29px;
+				position: absolute;
+				top: 688px;
+				width: 116px;
+			}
+			
+			.scaleuphome:hover {
+			  transform: scale(1.2);
+			  cursor: pointer;
+			}
+        </style>
+    </head>
+    <body>
+		<div id="stanza">
+			<div id="paesaggio">
+				<div id="ringhiera">
+				</div>
+				<div id="bestia">
+				</div>
+				<div id="fiori">
+				</div>
+				<div id="padre">
+				</div>
+				<div id="quadrato">
+				<p class="testo">La fanciulla inizialmente è molto spaventata dal mostro, ma con il tempo egli si rivela estremamente premuroso verso di lei. Una sera durante la cena la Bestia rivolge una domanda inaspettata alla fanciulla: <br> le chiede di diventare sua sposa.</p>
+				</div>
+				<a href="../index.html"><div id="home" class="scaleuphome">
+				</div>
+			</div>
+		</div>
+		<a href="11.html">
+			<div id="felice" class="ingrandimentobella">
+			</div>
+		</a>
+		<a href="09.html">
+			<div id="triste" class="ingrandimentobella">
+			</div>
+		</a>
+        <script>
+			$('#felice').mouseenter(function() {
+			  $('#testofelice').show();
+			});
+			
+			$('#felice').mouseleave(function() {
+			  $('#testofelice').hide();
+			});
+			
+			$('#triste').mouseenter(function() {
+			  $('#testotriste').show();
+			});
+			
+			$('#triste').mouseleave(function() {
+			  $('#testotriste').hide();
+			});
+        </script>
+    </body>
+</html>

@@ -1,0 +1,219 @@
+<html>
+    <head>
+        <script src="js/jquery.min.js"></script>
+		<meta charset="UTF-8">
+		<style>
+			@font-face {
+				font-family: Geneva;
+				src: url(font/Geneva.ttf);
+			}
+			
+			#stanza {
+				width: 1300px;
+				height: 750;
+				border: 1px solid black;
+			}
+			
+			#paesaggio {
+			  width: 1300px;
+			  height: 750px;
+			  background-image: url("img/05/bgerba.jpg");
+			  background-size: cover;
+			}
+
+			#bestia {
+			  width: 230px;
+			  height: 258px;
+			  position: absolute;
+			  top: 300px;
+			  left: 220px;
+			  background-image: url("img/05/bestia.png");
+			  background-size: cover;
+			}
+
+			#fiori {
+			  width: 260px;
+			  height: 120px;
+			  position: absolute;
+			  top: 410px;
+			  left: 708px;
+			  background-image: url("img/05/fiori.png");
+			  background-size: cover;
+			}
+			
+			#ringhiera {
+			  width: 960px;
+			  height: 158px;
+			  position: absolute;
+			  top: 290px;
+			  left: 8px;
+			  background-image: url("img/05/ringhiera.png");
+			  background-size: contain;
+			}
+			
+			#padre {
+			  width: 160px;
+			  height: 228px;
+			  position: absolute;
+			  top: 330px;
+			  left: 510px;
+			  background-image: url("img/05/padre.png");
+			  background-size: cover;
+			}
+			
+			#felice {
+				background-image: url("img/05/felice.png");
+				background-size: cover;
+				height: 86px;
+				left: 310px;
+				position: absolute;
+				top: 290px;
+				width: 101px;
+			}
+
+			#triste {
+				background-image: url("img/05/triste.png");
+				background-size: cover;
+				height: 86px;
+				left: 110px;
+				position: absolute;
+				top: 290px;
+				width: 101px;
+			}
+
+			#testofelice {
+				display: none;
+				position: absolute;
+				top: 660;
+				left: 500;
+				color: red;
+				text-decoration: none;
+			}
+			
+			#testotriste {
+				display: none;
+				position: absolute;
+				top: 660;
+				left: 220;
+				color: red;
+				text-decoration: none;
+			}
+			
+			#quadrato {
+				background-color: #fff2e6;				/*per la trasparenza usa l'ultimo valore*/
+				width: 440px;
+				height: 390px;
+				top: -300px;
+				left: -480px;
+				position: absolute;
+				opacity: 0.8;
+			}
+			
+			.testo {
+				color: black;
+				font-family: Geneva;
+				font-size: 18pt;
+				padding-left: 25px;
+				padding-right: 15px;
+			}
+			
+			#felice {
+			  position:absolute;
+			  width:379px;
+			  height:320px;
+			  top: 188px;
+			  left: 150px;
+			  background-position: 0px 0px;
+			  background-image: url("img/05/spritesi.png");
+			  animation: play 0.6s steps(2) infinite;
+			  image-rendering: pixelated;
+			  background-repeat: no-repeat;
+			  cursor: pointer;
+			}
+			
+			@keyframes play {
+			  0% {background-position: 0px 0px}
+			  100% {background-position: -758px 0px;}
+			}
+
+			#triste {
+			  position:absolute;
+			  width:379px;
+			  height:320px;
+			  top: 188px;
+			  left: -40px;
+			  background-position: 0px 0px;
+			  background-image: url("img/05/spriteno.png");
+			  animation: play 0.6s steps(2) infinite;
+			  image-rendering: pixelated;
+			  background-repeat: no-repeat;
+			  cursor: pointer;
+			}
+			
+			.ingrandimentobella {
+			  transform: scale(0.3);
+			}
+			
+			#home {
+				background-image: url("img/home.png");
+				background-size: cover;
+				height: 58px;
+				left: 29px;
+				position: absolute;
+				top: 688px;
+				width: 116px;
+			}
+			
+			.scaleuphome:hover {
+			  transform: scale(1.2);
+			  cursor: pointer;
+			}
+        </style>
+    </head>
+    <body>
+		<div id="stanza">
+			<div id="paesaggio">
+				<div id="ringhiera">
+				</div>
+				<div id="bestia">
+				</div>
+				<div id="fiori">
+				</div>
+				<div id="padre">
+				</div>
+				<div id="padre">
+					<div id="quadrato">
+						<p class="testo">Un enorme mostro lo assale, gridando che lo avrebbe ucciso! <br> Il mercante cerca quindi di spiegare <br> le sue ragioni: la Bestia decide <br> di risparmiagli la vita, ma in cambio <br> la fanciulla a cui era dedicata la rosa sarebbe dovuta andare ad abitare <br> nel castello con lui.</p>
+					</div>
+				</div>
+				<a href="../index.html"><div id="home" class="scaleuphome">
+				</div>
+			</div>
+		</div>
+		<a href="10.html">
+			<div id="felice" class="ingrandimentobella">
+			</div>
+		</a>
+		<a href="06.html">
+			<div id="triste" class="ingrandimentobella">
+			</div>
+		</a>
+        <script>
+			$('#felice').mouseenter(function() {
+			  $('#testofelice').show();
+			});
+			
+			$('#felice').mouseleave(function() {
+			  $('#testofelice').hide();
+			});
+			
+			$('#triste').mouseenter(function() {
+			  $('#testotriste').show();
+			});
+			
+			$('#triste').mouseleave(function() {
+			  $('#testotriste').hide();
+			});
+        </script>
+    </body>
+</html>

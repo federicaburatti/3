@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <script src="js/jquery.min.js"></script>
+		<meta charset="UTF-8">
+		<style>
+			@font-face {
+				font-family: Geneva;
+				src: url(font/Geneva.ttf);
+			}
+			
+			#stanza {
+				width: 1300px;
+				height: 750px;
+				border: 1px solid black;
+			}
+			
+			#paesaggio {
+				position: absolute;
+				width: 1300px;
+				height: 750px;
+				background-image: url("img/14b/bg.jpg");
+				background-size: cover;
+			}
+			
+			#quadrato {
+				background-color: #fff2e6;
+				width: 440px;
+				height: 170px;
+				top: 539px;
+				left: 840px;
+				position: absolute;
+				opacity: 0.8;
+			}
+			
+			.testo {
+				color: black;
+				font-family: Geneva;
+				font-size: 18pt;
+				padding-left: 30px;
+			}
+			
+			#avanti {
+				background-image: url("img/avanti.png");
+				background-size: cover;
+				height: 58px;
+				left: 1170px;
+				position: absolute;
+				top: 679px;
+				width: 116px;
+			}
+			
+			#home {
+				background-image: url("img/home.png");
+				background-size: cover;
+				height: 58px;
+				left: 20px;
+				position: absolute;
+				top: 679px;
+				width: 116px;
+			}
+			
+			#spritestelle {
+			  position:absolute;
+			  width: 247px;
+			  height: 139px;
+			  top: 212px;
+			  left: 549px;
+			  background-position: 0px 0px;
+			  background-image: url("img/14b/spritestelleflip.png");
+			  animation: play 0.6s steps(2) infinite;
+			  image-rendering: pixelated;
+			  background-repeat: no-repeat;
+			  cursor: pointer;
+			}
+			
+			@keyframes play {
+			  0% {background-position: 0px 0px}
+			  100% {background-position: -495px 0px;}
+			}
+			
+			.scaleuphome:hover {
+			  transform: scale(1.2);
+			  cursor: pointer;
+			}
+        </style>
+    </head>
+    <body>
+		<div id="stanza">
+			<div id="paesaggio">
+				<div id="quadrato">
+				<p class="testo">Il padre di Bella purtroppo continua <br> a peggiorare: non sapendo come guarirlo la fanciulla parte subito <br> in cerca di aiuto.</p>
+				</div>
+				<a href="08.html"><div id="avanti" class="scaleuphome">
+				</div>
+				<a href="../index.html"><div id="home" class="scaleuphome">
+				</div>
+				<div id="spritestelle">
+				</div>
+			</div>
+		</div>
+		<div id="spritestelle.png">
+		</div>
+        <script>
+			//sparisci = function() {
+			  $("#diamante").fadeOut()
+			}
+
+			$(function () {
+				setInterval(function () { $('#diamante').delay(400).fadeOut(10).delay(400).fadeIn(10);}, 500);
+				setInterval(function () { $('#rosa').fadeOut(10).delay(400).fadeIn(10).delay(400);}, 500);
+			});
+        </script>
+    </body>
+</html>

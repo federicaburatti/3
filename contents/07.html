@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <script src="js/jquery.min.js"></script>
+		<script src="js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+		<meta charset="UTF-8">
+		<style>
+			@font-face {
+				font-family: Geneva;
+				src: url(font/Geneva.ttf);
+			}
+			
+			#stanza {
+				width: 1300px;
+				height: 750px;
+				border: 1px solid black;
+			}
+			
+			#paesaggio {
+			  width: 1300px;
+			  height: 750px;
+			  background-image: url("img/07/bg.jpg");
+			  background-size: cover;
+			}
+			
+			#bella {
+				background-image: url("img/07/bella.png");
+				background-size: cover;
+				width: 197px;
+				height: 269px;
+				position: absolute;
+				top: 354px;
+				left: 292px;
+			}
+			
+			#bella:hover {
+				cursor: pointer;
+			}
+			
+			#castello {
+				background-image: url("img/07/castelloglow.png");
+				background-size: cover;
+				width: 1300px;
+				position: absolute;
+				height: 750px;
+				display:none
+				alpha: opacity=10;
+			}
+
+			COMMENTO.scala:hover {
+				transform: scale(1.5);
+			}
+			.glow {
+			  animation: op 1s alternate infinite linear;
+			}
+			
+			@keyframes op {
+				from {opacity:0;}
+				to {opacity:1;}
+			}
+
+			#quadrato {
+				background-color: #fff2e6;
+				width: 440px;
+				height: 163px;
+				top: 555px;
+				left: 850px;
+				position: absolute;
+				opacity: 0.8;
+			}
+			
+			.testo1 {
+				color: black;
+				font-family: Geneva;
+				font-size: 18pt;
+				padding-left: 40px;
+			}
+			
+			#avanti {
+				background-image: url("img/avanti.png");
+				background-size: cover;
+				height: 58px;
+				left: 1180px;
+				position: absolute;
+				top: 688px;
+				width: 116px;
+			}
+			
+			#home {
+				background-image: url("img/home.png");
+				background-size: cover;
+				height: 58px;
+				left: 29px;
+				position: absolute;
+				top: 688px;
+				width: 116px;
+			}
+			
+			.scaleuphome:hover {
+			  transform: scale(1.2);
+			  cursor: pointer;
+			}
+        </style>
+    </head>
+    <body>
+		<div id="stanza">
+			<div id="paesaggio">
+				<div id="castello" class="glow scala">
+				</div>
+				<div id="bella">
+				</div>
+				<div id="quadrato">
+					<p class="testo1">Bella non si trova in casa perché durante la notte è stata rapita <br> da un mostro che l’ha portata <br> nel suo castello.</p>
+				</div>
+				<a href="../index.html"><div id="home" class="scaleuphome">
+				</div>
+				<a href="POST611.html"><div id="avanti" class="scaleuphome">
+				</div>
+			</div>
+		</div>
+        <script>
+
+		$("#bella").draggable({
+		  revert: function (x, y) {
+			if ($(this).position().left > 700 && $(this).position().left < 850 && $(this).position().top > 174 && $(this).position().top < 304) {
+				//alert($(this).position().left + " " + $(this).position().top)
+				setTimeout(function(){ window.location = "10.html"; }, 500);
+			}
+			
+			return false;}
+		})
+
+        </script>
+    </body>
+</html>

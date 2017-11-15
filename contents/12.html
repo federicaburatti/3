@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <script src="js/jquery.min.js"></script>
+		<meta charset="UTF-8">
+		<style>
+			@font-face {
+				font-family: Geneva;
+				src: url(font/Geneva.ttf);
+			}
+			
+			#stanza {
+				width: 1300px;
+				height: 750px;
+				border: 1px solid black;
+			}
+			
+			#paesaggio {
+			  width: 1300px;
+			  height: 750px;
+			  top: 100px;
+			  left: 300px;
+			  background-image: url("img/12/bg.jpg");
+			  background-size: cover;
+			}
+			
+			#felice {
+				background-image: url("img/12/felice.png");
+				background-size: cover;
+				height: 108px;
+				left: 500px;
+				position: absolute;
+				top: 580px;
+				width: 176px;
+			}
+
+			#testofelice {
+				display: none;
+				position: absolute;
+				top: 660px;
+				left: 500px;
+				color: red;
+				text-decoration: none;
+			}
+			
+			#quadrato {
+				background-color: #fff2e6;
+				width: 440px;
+				height: 260px;
+				top: 458px;
+				left: 847px;
+				position: absolute;
+				opacity: 0.8;
+			}
+			
+			.testo {
+				color: black;
+				font-family: Geneva;
+				font-size: 18pt;
+				padding-left: 30px;
+				padding-right: 15px;
+			}
+			
+			#avanti {
+				background-image: url("img/avanti.png");
+				background-size: cover;
+				height: 58px;
+				left: 1180px;
+				position: absolute;
+				top: 688px;
+				width: 116px;
+			}
+
+			#home {
+				background-image: url("img/home.png");
+				background-size: cover;
+				height: 58px;
+				left: 29px;
+				position: absolute;
+				top: 688px;
+				width: 116px;
+			}
+			
+			.scaleuphome:hover {
+			  transform: scale(1.2);
+			  cursor: pointer;
+			}
+        </style>
+    </head>
+    <body>
+		<div id="stanza">
+			<div id="paesaggio">
+			<div id="quadrato">
+				<p class="testo">Bella arriva in tempo dal padre ammalato, lo cura e finalmente guarisce. La fanciulla però rimane dal padre più del dovuto e, facendo ritorno al castello, trova la Bestia sofferente a causa della lontananza della sua amata.</p>
+			</div>
+				<a href="ufficiale.html"><div id="avanti" class="scaleuphome">
+				</div>
+				<a href="../index.html"><div id="home" class="scaleuphome">
+				</div>
+			</div>
+		</div>
+        <script>
+			$('#felice').mouseenter(function() {
+			  $('#testofelice').show();
+			});
+			
+			$('#felice').mouseleave(function() {
+			  $('#testofelice').hide();
+			});
+			
+			$('#triste').mouseenter(function() {
+			  $('#testotriste').show();
+			});
+			
+			$('#triste').mouseleave(function() {
+			  $('#testotriste').hide();
+			});
+			
+			
+			
+			$('#porta').click(function(){
+				var numero = Math.random();
+				
+				$("#porta").addClass("spostamento");
+				
+				if (numero > 0.5) {
+					$('#bella').show();
+					//alert(numero);
+					setTimeout(function(){ window.location = "14.html"; }, 2000);
+				} else {
+					//alert(numero);
+					setTimeout(function(){ window.location = "07.html"; }, 2000);
+				}
+			});
+        </script>
+    </body>
+</html>

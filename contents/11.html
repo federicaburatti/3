@@ -1,0 +1,144 @@
+<html>
+    <head>
+        <script src="js/jquery.min.js"></script>
+		<meta charset="UTF-8">
+		<style>
+			@font-face {
+				font-family: Geneva;
+				src: url(font/Geneva.ttf);
+			}
+			
+			#stanza {
+				width: 1300px;
+				height: 750px;
+				border: 1px solid black;
+			}
+			
+			#paesaggio {
+			  width: 1300px;
+			  height: 750px;
+			  background-image: url("img/11/bg.jpg");
+			  background-size: cover;
+			}
+			
+			#felice {
+				background-image: url("img/11/felice.png");
+				background-size: cover;
+				height: 108px;
+				left: 500px;
+				position: absolute;
+				top: 580px;
+				width: 176px;
+			}
+
+			#triste {
+				background-image: url("img/11/triste.png");
+				background-size: cover;
+				height: 108px;
+				left: 220px;
+				position: absolute;
+				top: 580px;
+				width: 176px;
+			}
+
+			#testofelice {
+				display: none;
+				position: absolute;
+				top: 660;
+				left: 500;
+				color: red;
+				text-decoration: none;
+			}
+			
+			#testotriste {
+				display: none;
+				position: absolute;
+				top: 660;
+				left: 220;
+				color: red;
+				text-decoration: none;
+			}
+			
+			#avanti {
+				background-image: url("img/avanti.png");
+				background-size: cover;
+				height: 58px;
+				left: 1180px;
+				position: absolute;
+				top: 690px;
+				width: 116px;
+			}
+
+			#quadrato {
+				background-color: #fff2e6;				/*per la trasparenza usa l'ultimo valore*/
+				width: 440px;
+				height: 140px;
+				top: 30px;
+				left: 30px;
+				position: absolute;
+				opacity: 0.8;
+			}
+			
+			.testo {
+				color: black;
+				font-family: Geneva;
+				font-size: 18pt;
+				padding-left: 28px;
+				padding-right: 15px;
+			}
+			
+			#home {
+				background-image: url("img/home.png");
+				background-size: cover;
+				height: 58px;
+				left: 29px;
+				position: absolute;
+				top: 688px;
+				width: 116px;
+			}
+			
+			.scaleuphome:hover {
+			  transform: scale(1.2);
+			  cursor: pointer;
+			}
+        </style>
+    </head>
+    <body>
+		<div id="stanza">
+			<div id="paesaggio">
+				<div id="ringhiera">
+				</div>
+				<div id="bestia">
+				</div>
+				<div id="fiori">
+				</div>
+				<div id="padre">
+				</div>
+				<div id="quadrato">
+				<p class="testo">Purtroppo Bella scopre che il padre si è ammalato gravemente durante <br> la sua assenza da casa ed è morto.</p>
+				</div>
+				<a href="../index.html"><div id="home" class="scaleuphome">
+				</div>
+				<a href="POST611.html"><div id="avanti" class="scaleuphome">
+				</div>
+			</div>
+		</div>
+        <script>
+			$('#felice').mouseenter(function() {
+			  $('#testofelice').show();
+			});
+			
+			$('#felice').mouseleave(function() {
+			  $('#testofelice').hide();
+			});
+			
+			$('#triste').mouseenter(function() {
+			  $('#testotriste').show();
+			});
+			
+			$('#triste').mouseleave(function() {
+			  $('#testotriste').hide();
+			});
+        </script>
+    </body>
+</html>
